@@ -1,0 +1,31 @@
+<h1>A list of all articles.</h1>
+
+<p>
+  <%= link_to 'New article', new_article_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th> &nbsp; </th>
+    <th>Text</th>
+  </tr>
+
+  <% @articles.reverse.each do |article| %>
+    <tr>
+      <td> <%= link_to article.title, article_path(article) %> </td>
+      <td> &nbsp; </td>
+      <td> <%= article.text %> </td>
+      <td> &nbsp; </td>
+      <td> <%= link_to 'read', article_path(article) %> </td>
+      <td> <%= link_to 'edit', edit_article_path(article) %> </td>
+      <td> <%= link_to 'delete', article_path(article),
+                                 method: :delete,
+                                 data: { confirm: 'Are you sure?' } %> </td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+  <%= link_to 'Home', welcome_index_path %>
+</p>
