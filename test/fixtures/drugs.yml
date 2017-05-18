@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_main: MyString
+  names_code: MyString
+  names_brand: MyString
+  names_generic: 
+  mechanisms_molecular: MyString
+
+two:
+  name_main: MyString
+  names_code: MyString
+  names_brand: MyString
+  names_generic: 
+  mechanisms_molecular: MyString

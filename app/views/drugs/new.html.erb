@@ -1,0 +1,36 @@
+<h1>I Want a New Drug</h1>
+
+<%= form_for :drug, url: drugs_path do |f| %>
+  <p>
+    <%= f.label :name_main %><br>
+    <%= f.text_field :name_main %>
+  </p>
+
+  <p>
+    "comma,separated,names"<br>
+    <%= f.label :names_code %><br>
+    <%= f.text_area :names_code %>
+  </p>
+
+  <p>
+    "comma,separated,names"<br>
+    <%= f.label :names_brand %><br>
+    <%= f.text_area :names_brand %>
+  </p>
+
+  <p>
+    "comma,separated,names"<br>
+    <%= f.label :names_generic %><br>
+    <%= f.text_area :names_generic %>
+  </p>
+
+  <p>
+    "comma,separated,names"<br>
+    <%= f.label :mechanisms_molecular %><br>
+    <%= f.text_area :mechanisms_molecular %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,39 @@
+<h1>A list of all drugs.</h1>
+
+<p>
+  <%= link_to 'New drug', new_drug_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Name (Main)</th>
+    <th> &nbsp; </th>
+    <th>Code Names</th>
+    <th> &nbsp; </th>
+    <th>Brand Names</th>
+    <th> &nbsp; </th>
+    <th>Generic Names</th>
+    <th> &nbsp; </th>
+    <th>Molecular Mechanisms</th>
+  </tr>
+
+  <% @drugs.each do |drug| %>
+    <tr>
+      <td> <%= link_to drug.name_main, drug_path(drug) %> </td>
+      <td> &nbsp; </td>
+      <td> <%= drug.names_code %> </td>
+      <td> &nbsp; </td>
+      <td> <%= drug.names_brand %> </td>
+      <td> &nbsp; </td>
+      <td> <%= drug.names_generic %> </td>
+      <td> &nbsp; </td>
+      <td> <%= drug.mechanisms_molecular %> </td>
+      <td> &nbsp; </td>
+      <td> <%= link_to 'read', drug_path(drug) %> </td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+  <%= link_to 'Home', welcome_index_path %>
+</p>

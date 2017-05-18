@@ -1,0 +1,28 @@
+<h1>Drug Record</h1>
+<h2>
+  <%= @drug.name_main %>
+</h2>
+
+<p>
+  <em>Code Names:</em><br>
+  <%= @drug.names_code %>
+</p>
+
+<p>
+  <em>Brand Names:</em><br>
+  <%= @drug.names_brand %>
+</p>
+
+<p>
+  <em>Generic Names:</em><br>
+  <%= @drug.names_generic %>
+</p>
+
+<p>
+  <em>Molecular Mechanisms:</em><br>
+  <%= @drug.mechanisms_molecular %>
+</p>
+
+<p>
+  <%= link_to 'Back', welcome_index_path %>
+</p>

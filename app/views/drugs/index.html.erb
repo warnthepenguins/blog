@@ -1,0 +1,61 @@
+<h1>Find a drug.</h1>
+
+<p>
+  <%= form_tag drugs_path, :method => 'get', id: 'search-form' do%>
+    <%= text_field_tag :search, params[:search], placeholder: 'Drug name or molecular mechanism', autocomplete: 'off' %>
+    <%= submit_tag "Search", :name => nil %>
+  <% end %>
+</p>
+
+<ul id='js-suggestions'>
+</ul>
+
+<h1>
+  <% if params[:search] %>
+    <%= 'Drugs matching ' + params[:search] %>
+  <% else %>
+    A list of all drugs
+  <% end %>
+</h1>
+
+<p>
+  <p>
+    <%= link_to 'New drug', new_drug_path %>
+  </p>
+
+  <table>
+    <tr>
+      <th>Name (Main)</th>
+      <th> &nbsp; </th>
+      <th>Code Names</th>
+      <th> &nbsp; </th>
+      <th>Brand Names</th>
+      <th> &nbsp; </th>
+      <th>Generic Names</th>
+      <th> &nbsp; </th>
+      <th>Molecular Mechanisms</th>
+    </tr>
+
+    <% @drugs.each do |drug| %>
+      <tr>
+        <td> <%= link_to drug.name_main, drug_path(drug) %> </td>
+        <td> &nbsp; </td>
+        <td> <%= drug.names_code %> </td>
+        <td> &nbsp; </td>
+        <td> <%= drug.names_brand %> </td>
+        <td> &nbsp; </td>
+        <td> <%= drug.names_generic %> </td>
+        <td> &nbsp; </td>
+        <td> <%= drug.mechanisms_molecular %> </td>
+        <td> &nbsp; </td>
+        <td> <%= link_to 'read', drug_path(drug) %> </td>
+      </tr>
+    <% end %>
+  </table>
+
+
+</p>
+
+<p>
+  <%= link_to 'Home', welcome_index_path %>
+</p>
